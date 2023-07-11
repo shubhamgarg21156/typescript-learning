@@ -1,54 +1,48 @@
-// 1. Type basics
+// ------ Explicit types ----------- //
 
-const character = "mario";
-console.log(character);
+let character : string;
+let age : number;
+let isLoggedIn : boolean;
 
-const inputs = document.querySelectorAll('input');
-console.log(inputs)
+//age = 'Luigi'; //not possible
+age = 30
 
-inputs.forEach(input => {
-    console.log(input);
-})
+//isLoggedIn = 25; //not possible
+isLoggedIn = true;
 
-// character = 20; //we cannot change the type later
+// ------ arrays Explicit types -------- //
+let ninjas : string[] = []; //can only be array of strings
 
-const circ = (diameter : number) => { //diamater is a number. Note: number is int,float,decimal any kind of number. s
-    return diameter * Math.PI;
-}
-
-console.log(circ(5)); //now cannot pass string or boolean here
+// ninjas.push('Tom'); //cannot push unless we initialize the array. 
+ninjas.push('peter');
 
 
 
-//2. Object and arrays
+// ------------ union types ------------------ //
+let mixed : (string|number|boolean)[] = [];
+mixed.push('Hello');
+mixed.push(20);
+mixed.push(false);
+// console.log(mixed);
 
-// ---- Arrays ---------- //
+let uid : string|number; //uid can be a string or a number
+uid = '123';
+uid = 21;
 
-let names = ['luigi' , 'mario', 'yoshi'];
-// names.push(20); //cannot push number to string array
-// names[0] = 20; ///cant change it to number
-//names = 'bijli' //not alllowed to change array type
-
-names = ['lal'] //we can do this but still cannot add any number or boolean
-let mixed = ['ken' , 20, 40, true];  //Here our array has each string. number and boolean type value. So we can push or change any type value. 
-mixed[0] = 20
-
-// ---------- Objects -------------- //
-
-let ninja = {
-    name : 'Sam', //these behave as variables. Once assigned, its type cannot change.  
-    belt : 'black',
+// --------------- objects ------------------ //
+let ninjaOne : object;
+ninjaOne = {
+    name : '',
     age : 20
 }
 
-ninja.age = 40 //it is possible
-// ninja.age = 'forty' //not possible
-//ninja.skills = ['fightinh','skeaing'] //not possible. Cannot add new property
-
-// we can redefine ninja but it should have same keys and same types of keys
-ninja = {
-    name : 'Name',
-    belt : 'yellow', //it cannot be number now
-    age : 40
-    //no new property can be added. 
+//our object should have these three fields. We can define a template like this. 
+let ninjaTwo : {
+    name : string,
+    age : number,
+    color : string
 }
+
+
+let ninjaThree = {}
+// ninjaThree.day = 'monday'; //cannot add property to an empty array
