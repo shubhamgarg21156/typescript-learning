@@ -1,7 +1,40 @@
-//use tsc --init to create config file
+let greet = () => {
+    console.log('hello, world');
+}
 
-//Now we can change rootDir and outDir path to define path of root directory of ts files and output directory for js files.
+// greet = 'hello'; //cannot be changed to string
 
-//Now just use command tsc -w to run. It will transpile all the ts files in src folder(defined in rootDir) and save js files in public folder(outDir)
+let fun : Function; //explicitly defined 
 
-//If we want to avoid compilation of ts file outside src folder, we can add "include" : ["src"] in tscconfig
+fun = () => {
+    console.log('hello');
+}
+
+// -------------------- //
+const add = (a : number, b : number, c?: number | string) => {
+    console.log(a + b);
+    console.log(c); //if c is not passed, it is undefined as  c is optional parameter
+}
+
+add(1,2);
+
+// --------------- //
+const add2 = (a : number, b : number, c: number | string = 10) => {
+    console.log(a + b);
+    console.log(c); //if c is not passed, it will have value 10
+}
+
+// ----------------- //
+
+const minus = (a:number, b:number) => {
+    return a-b;
+}
+
+let result = minus(10,7); //type of the variable result will be decided by the value returned by the function.
+
+//As 'result' is a number (as number is returned by 'minus'), it cannot be changed to string or boolean. 
+
+// ------------------ //
+const minus2 = (a:number, b:number) : number => {  //we can explicitly define return type of the function. 
+    return a-b;
+}
