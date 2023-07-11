@@ -1,31 +1,15 @@
-// ------ Explicit types ----------- //
-var character;
-var age;
-var isLoggedIn;
-//age = 'Luigi'; //not possible
-age = 30;
-//isLoggedIn = 25; //not possible
-isLoggedIn = true;
-// ------ arrays Explicit types -------- //
-var ninjas = []; //can only be array of strings
-// ninjas.push('Tom'); //cannot push unless we initialize the array. 
-ninjas.push('peter');
-// ------------ union types ------------------ //
+// --------- Dynamic(any) Types ------------ //
+var age = 25;
+age = true; //can change to boolean
+age = { name: 'luigi' }; //can change to object
+//dynamic array
 var mixed = [];
-mixed.push('Hello');
-mixed.push(20);
+mixed.push(5);
+mixed.push('KA');
 mixed.push(false);
-// console.log(mixed);
-var uid; //uid can be a string or a number
-uid = '123';
-uid = 21;
-// --------------- objects ------------------ //
-var ninjaOne;
-ninjaOne = {
-    name: '',
+//----- dynamic object -------- // 
+var ninja;
+ninja = {
+    name: "JK",
     age: 20
 };
-//our object should have these three fields. We can define a template like this. 
-var ninjaTwo;
-var ninjaThree = {};
-// ninjaThree.day = 'monday'; //cannot add property to an empty array
